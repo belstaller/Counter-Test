@@ -17,12 +17,16 @@ interface ThemeContextValue {
 
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
-const STORAGE_KEY = 'theme';
+export const STORAGE_KEY = 'theme';
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  // Default to 'light' so the server-rendered HTML matches :root CSS variables.
+  // The blocking inline script in layout.tsx sets data-theme on <html> before
+  // first paint, so the correct theme is already visible — no flash occurs.
   const [theme, setTheme] = useState<Theme>('light');
 
-  // Initialise from localStorage / system preference on mount
+  // On mount: read the persisted preference (or system preference) and align
+  // React state with whatever data-theme the inline script already applied.
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
     if (stored === 'light' || stored === 'dark') {
@@ -32,7 +36,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  // Sync data-theme attribute and persist whenever theme changes
+  // Keep data-theme attribute and localStorage in sync with React state.
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem(STORAGE_KEY, theme);
