@@ -9,6 +9,19 @@
   border-radius: 15px;
   padding: 2rem;
   box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.displayLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
 }
 
 .count {
@@ -35,6 +48,24 @@
   transition: all 0.2s ease;
   color: white;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.buttonIcon {
+  display: block;
+  line-height: 1;
+}
+
+.buttonLabel {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
 }
 
 .button:hover {
@@ -83,5 +114,9 @@
 
   .reset {
     font-size: 0.9rem;
+  }
+
+  .buttonLabel {
+    font-size: 0.6rem;
   }
 }

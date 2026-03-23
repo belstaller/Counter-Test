@@ -16,7 +16,8 @@ const Counter: React.FC<CounterProps> = ({
 }) => {
   return (
     <div className={styles.counter}>
-      <div className={styles.display}>
+      <div className={styles.display} aria-live="polite" aria-atomic="true">
+        <span className={styles.displayLabel}>Current Count</span>
         <span className={styles.count}>{count}</span>
       </div>
       <div className={styles.controls}>
@@ -25,7 +26,8 @@ const Counter: React.FC<CounterProps> = ({
           onClick={onDecrement}
           aria-label="Decrement counter"
         >
-          −
+          <span className={styles.buttonIcon}>−</span>
+          <span className={styles.buttonLabel}>Decrement</span>
         </button>
         <button
           className={`${styles.button} ${styles.reset}`}
@@ -39,7 +41,8 @@ const Counter: React.FC<CounterProps> = ({
           onClick={onIncrement}
           aria-label="Increment counter"
         >
-          +
+          <span className={styles.buttonIcon}>+</span>
+          <span className={styles.buttonLabel}>Increment</span>
         </button>
       </div>
     </div>
