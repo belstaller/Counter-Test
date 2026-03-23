@@ -1,0 +1,76 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 999px;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+}
+
+.toggle:hover {
+  color: var(--color-text);
+}
+
+.toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ── Sliding track ─────────────────────────────────────────────────── */
+.track {
+  position: relative;
+  width: 3.25rem;
+  height: 1.75rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: background 0.35s ease;
+  flex-shrink: 0;
+}
+
+.trackDark {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+/* ── Sliding thumb ─────────────────────────────────────────────────── */
+.thumb {
+  position: absolute;
+  top: 50%;
+  left: 0.2rem;
+  transform: translateY(-50%) translateX(0);
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #667eea;
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    color 0.35s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.thumbDark {
+  transform: translateY(-50%) translateX(1.45rem);
+  color: #764ba2;
+}
+
+/* ── Label ─────────────────────────────────────────────────────────── */
+.label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+  user-select: none;
+}
+
+.toggle:hover .label {
+  color: var(--color-text);
+}

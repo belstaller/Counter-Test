@@ -1,3 +1,26 @@
+/* ── CSS custom properties — light (default) ──────────────────────── */
+:root {
+  --color-bg-page: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --color-bg-card: #ffffff;
+  --color-text: #1a1a2e;
+  --color-text-muted: #666666;
+  --color-title-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --color-accent: #667eea;
+  --color-card-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* ── Dark theme overrides ─────────────────────────────────────────── */
+[data-theme='dark'] {
+  --color-bg-page: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  --color-bg-card: #1e1e2e;
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-title-gradient: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
+  --color-accent: #a78bfa;
+  --color-card-shadow: rgba(0, 0, 0, 0.6);
+}
+
+/* ── Base reset ───────────────────────────────────────────────────── */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,11 +34,24 @@ body {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--color-text);
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
 }
 
 a {
