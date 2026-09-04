@@ -24,8 +24,26 @@
 
 .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1.5rem;
+}
+
+.navLink {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--color-text);
+}
+
+.navLink:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .title {

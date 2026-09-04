@@ -1,0 +1,194 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: var(--color-bg-page);
+  transition: background 0.35s ease;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 960px;
+  margin-bottom: 1.5rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 960px;
+}
+
+/* ── Shared card look, matches page.module.css .container ───────────── */
+.hero,
+.features,
+.techStack {
+  background: var(--color-bg-card);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px var(--color-card-shadow);
+  transition:
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────── */
+.hero {
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  background: var(--color-title-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: background 0.35s ease;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+  max-width: 640px;
+  transition: color 0.35s ease;
+}
+
+.cta {
+  display: inline-block;
+  background: var(--color-accent);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.cta:hover {
+  background: var(--color-title-gradient);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cta:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ── Section titles ───────────────────────────────────────────────── */
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+  transition: color 0.35s ease;
+}
+
+/* ── Features ─────────────────────────────────────────────────────── */
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.featureCard {
+  background: var(--color-bg-page);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.featureTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 0.5rem 0;
+}
+
+.featureDescription {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Tech stack ───────────────────────────────────────────────────── */
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.techItem {
+  background: var(--color-title-gradient);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .hero,
+  .features,
+  .techStack {
+    padding: 2rem;
+  }
+
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero,
+  .features,
+  .techStack {
+    padding: 1.5rem;
+  }
+
+  .cta {
+    width: 100%;
+  }
+
+  .techList {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .techItem {
+    text-align: center;
+  }
+}

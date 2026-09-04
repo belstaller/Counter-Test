@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import Counter from '@/components/Counter';
 import ThemeToggle from '@/components/ThemeToggle';
 import styles from './page.module.css';
@@ -16,6 +17,9 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.container}>
         <div className={styles.header}>
+          <Link href="/landing" className={styles.navLink}>
+            About this project
+          </Link>
           <ThemeToggle />
         </div>
         <h1 className={styles.title}>Counter Test</h1>
